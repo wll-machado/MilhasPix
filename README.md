@@ -14,9 +14,10 @@
 3. 🤸 [Iniciando o Projeto](#quick-start)
 
 
-## <a name="introduction">✨ Introduction</a>
+## <a name="introduction">✨ Introdução</a>
 
-Build an AI-powered Resume Analyzer with React, React Router, and Puter.js! Implement seamless auth, upload and store resumes, and match candidates to jobs using smart AI evaluations. Get custom feedback and ATS scores tailored to each listing—all wrapped in a clean, reusable UI.
+Gerenciador de Ofertas de Milhas com React, React Router e APIs REST!
+Implemente cadastro de novas ofertas com inputs funcionais, máscaras de valor em R$, e consumo em tempo real de ranking de milheiros. Liste e gerencie ofertas através de integração com a API de ofertas, alternando entre telas de cadastro e listagem com navegação fluida. Tudo isso dentro de uma interface responsiva, fiel ao design do Figma e focada em uma experiência de uso clara, moderna e reutilizável.
 
 If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
 
