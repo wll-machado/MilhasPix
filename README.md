@@ -38,8 +38,9 @@ Implemente cadastro de novas ofertas com inputs funcionais, máscaras de valor e
 Siga o passo a passo para rodar o projeto localmente na sua máquina.
 
 
-**Pre requisitos**
-Tenha certeza que os seguinter programas estão instalados:
+**Pre requisitos** 
+<br/>
+Tenha certeza que os seguintes programas estão instalados:
 
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en)
