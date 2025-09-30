@@ -6,15 +6,13 @@
 </div>
 
 <h3 align="center">Projeto para o teste tecnico Milhas Pix</h3>
-_______________________________________________________________________
+
 ## 📋 <a name="table">Guia Básico</a>
 
 1. ✨ [Introdução](#introduction)
 2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🔗 [Assets](#links)
-6. 🚀 [More](#more)
+3. 🤸 [Iniciando o Projeto](#quick-start)
+
 
 ## <a name="introduction">✨ Introduction</a>
 
