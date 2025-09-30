@@ -19,8 +19,6 @@
 Gerenciador de Ofertas de Milhas com React, React Router e APIs REST!
 Implemente cadastro de novas ofertas com inputs funcionais, máscaras de valor em R$, e consumo em tempo real de ranking de milheiros. Liste e gerencie ofertas através de integração com a API de ofertas, alternando entre telas de cadastro e listagem com navegação fluida. Tudo isso dentro de uma interface responsiva, fiel ao design do Figma e focada em uma experiência de uso clara, moderna e reutilizável.
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
-
 
 ## <a name="tech-stack">⚙️ Tech Stack - O que foi utilizado no projeto!!</a>
 
