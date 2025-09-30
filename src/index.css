@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --text-color: #2E3D50;
+  --primary-color: #1E90FF;
+  --alert-color: #DC2B2B;
+  --sucess-color: #12A19A;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+@layer components {
+      .bg {
+        background-color: var(--primary-color);
+      }
+
+      .text {
+        color: #EAEAEA;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+ }
