@@ -49,7 +49,7 @@ Tenha certeza que os seguinter programas estão instalados:
 
 ```bash
 git clone https://github.com/wll-machado/MilhasPix.git
-cd ai-resume-analyzer
+cd milhaspix
 ```
 
 **Instalação**
