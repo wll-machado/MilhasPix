@@ -1,41 +1,63 @@
-
-import {  Outlet, useLocation } from 'react-router'
-import Header from './Header'
+import { Outlet, useLocation } from "react-router";
+import Header from "./Header";
 
 const LayoutMain = () => {
   const location = useLocation();
   const steps = ["/cadastro", "/cadastro/step2", "/cadastro/step3", "/cadastro/step4"];
-  const currentStep = steps.findIndex(step => location.pathname.startsWith(step));
 
-
+  // pega o último índice compatível
+  const currentStep = steps.findLastIndex((step) =>
+    location.pathname.startsWith(step)
+  );
 
   return (
     <div className="w-full h-screen">
       <Header />
-      
-      <div className="flex min-h-screen">
-      <aside className="w-1/4 p-6 border-r bg-gray-50">
-        <ul className="space-y-4">
-          {steps.map((_, index) => (
-            <li key={index}>
-              <span
-                className={`font-bold ${
-                  index <= currentStep ? "text-blue-600" : "text-gray-400"
-                }`}
-              >
-                ● Etapa {index + 1}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </aside>
 
-      <main className="flex-1 p-10">
-        <Outlet />
-      </main>
-    </div>
-    </div>
-  )
-}
+      <div className="flex  bg-[#FFFFFF] py-8 px-28">
+        <div className="flex gap-10  h-[480px] w-full">
+          <aside className="dotContainer">
+          <ul className=" h-full">
+                {steps.map((_, index) => {
+                let dotClass = "";
+                let cellClass = "";
+                let lineClass = "";
 
-export default LayoutMain
+                if (index === currentStep) {
+                  dotClass = "active"; 
+                  cellClass = "Cellactive";
+                  
+                } else if (index < currentStep) {
+                  dotClass = "completed"; 
+                  lineClass = "lineactive";
+                } else {
+                  dotClass = "inactive"; 
+                }
+
+    return (
+      <li key={index} className={`dotCell ${cellClass}`}>
+        <span className={`dot ${dotClass}`}>
+          <div></div>
+        </span>
+        <p>Etapa {index + 1}</p>
+        {/* <div className={`line ${lineClass}`}></div> */}
+
+        {index < steps.length - 1 && (
+        <div className={`line ${index < currentStep ? "lineactive" : ""}`}></div>
+      )}
+      </li>
+    );
+  })}
+          </ul>
+        </aside>
+
+        <main className="flex-1 w-[936px]">
+          <Outlet />
+        </main>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LayoutMain;

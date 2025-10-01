@@ -28,10 +28,10 @@ const FormStep1 = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex justify-between">
     
     
-    <form  onSubmit={handleSubmit(onSubmit)} className="space-y-6 flex-2">
+    <form  onSubmit={handleSubmit(onSubmit)} className="flex-2 w-[52.6%]">
       <h2 className="text-2xl font-bold mb-6">Cadastro de Oferta - Etapa 1</h2>
       <div>
         <label className="block font-medium mb-2">

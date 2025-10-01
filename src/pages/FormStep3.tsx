@@ -24,7 +24,7 @@ const FormStep3 = () => {
     updateData(values);
     console.log("Step3 data:", { ...data, ...values });
     // aqui você pode enviar para API ou ir para uma tela de resumo
-    navigate("/cadastro/resumo");
+    navigate("/cadastro/step4");
   };
 
   return (
@@ -91,7 +91,7 @@ const FormStep3 = () => {
           type="submit"
           className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
         >
-          Finalizar
+          Concluir
         </button>
       </form>
 
