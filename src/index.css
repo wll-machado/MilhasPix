@@ -9,6 +9,7 @@
   --sucess-color: #12A19A;
   --inactive-color: #F0F0F0;
   --gray-color: #E2E2E2;
+  --text-secondary: #475569;
 }
 
 body {
@@ -23,11 +24,11 @@ body {
 @layer components {
       /* Estilização do container principal */
       .containerContent{
-        @apply flex bg-[#FFFFFF] py-8 px-28;
+        @apply flex bg-[#FFFFFF] md:py-8 py-4  px-4 lg:px-28;
       }
 
       .content{
-        @apply flex flex-col sm:flex-row gap-10  h-[480px] w-full;
+        @apply flex flex-row  gap-10  h-[480px] w-full;
       }
       .bg {
         background-color: var(--primary-color);
@@ -63,7 +64,7 @@ body {
         color: rgba(203, 213, 225, 1);
       }
       .dotContainer {
-        @apply w-[20.39%] h-[345px];
+        @apply w-[20.39%] md:h-[345px]  h-[28px] absolute md:relative md:left-0 md:bottom-0 bottom-5.5 left-[35%];
       }
       .dot{
         width: 32px;
@@ -177,47 +178,60 @@ body {
 
  @layer components{
   .OutletContainer {
-  @apply flex-1 w-[64.45%];
+  @apply flex-1 w-[64.45%] ;
   }
 
   .form{
-    @apply w-[68.97%] flex flex-col;
+    @apply w-full md:w-[68.97%] flex flex-col ;
     
     & .formContainer{
       border: 1px solid #E2E2E2;
       border-radius: 8px;
       margin-bottom: 16px;
+      ;
     }
 
     & .radioContainer{
-      @apply flex w-full gap-3 justify-between h-[72px] p-4 ;
+      @apply flex w-full gap-3 relative justify-between h-[72px] p-4 ;
 
       & li{
-        @apply w-[22.34%] flex justify-center;
+        @apply md:w-[22.34%] flex justify-center md:relative absolute w-[90%] h-[44px] ;
         background-color: var(--background);
         border-radius: 56px;
         
-        
 
         & .radio {
-          @apply flex justify-center items-center  w-full text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer  peer-checked:border-blue-600 peer-checked:border-2  peer-checked:text-blue-600 hover:text-blue-600 ;
+          @apply flex md:justify-center md:gap-0 gap-2.75 justify-between px-4 items-center  w-full text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer  peer-checked:border-blue-600 peer-checked:border-2  peer-checked:text-blue-600 hover:text-blue-600 ;
 
            border-radius: 56px;
-
-           & span{
+           
+           & div {
+            @apply flex  md:justify-center w-full justify-between;
+            & span{
             font-size: 14px;
+            color: var(--text-color); 
            }
 
            & .radioImg {
             @apply w-[43px] h-[20px] md:w-[61px] md:h-[26px] ;
             object-fit:contain;
            }
+           }
         }
       }
     }
-    
 
-    & .buttonForm{
+    & .buttonContainer{
+      @apply md:p-0 md:relative absolute p-4;
+      
+      display: flex;
+      flex-direction: column;
+      
+      left: 0;
+      bottom: 0;
+      
+     & .buttonForm{
+      
       width: 142px;
       height: 40px;
       background-color: var(--primary-color);
@@ -232,11 +246,12 @@ body {
       vertical-align: middle;
       padding: 10px 24px;
       border-radius: 44px;
-
+      z-index: 99;
       cursor: pointer;
       display: flex;
       gap: 8px;
       align-items: center;
+      
       align-self: flex-end;
     }
 
@@ -263,7 +278,8 @@ body {
       align-items: center;
       align-self: flex-start;
     }
-    
+    }
+      
     & span{
       color: var(--primary-color);
 
@@ -279,9 +295,10 @@ body {
     }
   }
   
+  
   .titleContainer{
     border-bottom: 1px solid #E2E2E2;
-    @apply flex w-full p-4 items-center gap-2;
+    @apply flex w-full md:p-4 p-3 items-center gap-2;
   }
   .title {
     font-family: DM Sans;
@@ -293,4 +310,27 @@ body {
     letter-spacing: 0%;    
   }
 
+ }
+
+ .notification {
+ @apply p-3 border border-[#E2E2E2] rounded h-[110px] w-full md:w-[26.72%];
+
+   & h2{
+    
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: var(--text-color);
+   }
+
+   & p{
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: var(--text-secondary);
+   }
  }
