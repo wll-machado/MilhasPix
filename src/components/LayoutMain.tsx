@@ -4,24 +4,34 @@ import Header from "./Header";
 const LayoutMain = () => {
   const location = useLocation();
   const steps = ["/cadastro", "/cadastro/step2", "/cadastro/step3", "/cadastro/step4"];
-
-  // pega o último índice compatível
-  const currentStep = steps.findLastIndex((step) =>
-    location.pathname.startsWith(step)
-  );
+  const stepDescriptions = [
+  "Escolha a companhia aérea",
+  "Oferte suas milhas",
+  "Insira os dados do programa",
+  "Pedido finalizado"
+];
+  
+  const currentStep = (() => {
+    for (let i = steps.length - 1; i >= 0; i--) {
+      if (location.pathname.startsWith(steps[i])) {
+        return i;
+      }
+    }
+    return -1;
+  })();
 
   return (
     <div className="w-full h-screen">
       <Header />
 
-      <div className="flex  bg-[#FFFFFF] py-8 px-28">
-        <div className="flex gap-10  h-[480px] w-full">
+      <div className="containerContent">
+        <div className="content">
           <aside className="dotContainer">
           <ul className=" h-full">
                 {steps.map((_, index) => {
                 let dotClass = "";
                 let cellClass = "";
-                let lineClass = "";
+                let textClass = "";
 
                 if (index === currentStep) {
                   dotClass = "active"; 
@@ -29,9 +39,10 @@ const LayoutMain = () => {
                   
                 } else if (index < currentStep) {
                   dotClass = "completed"; 
-                  lineClass = "lineactive";
+                  
                 } else {
                   dotClass = "inactive"; 
+                  textClass = "dotTextInactive";
                 }
 
     return (
@@ -39,9 +50,10 @@ const LayoutMain = () => {
         <span className={`dot ${dotClass}`}>
           <div></div>
         </span>
-        <p>Etapa {index + 1}</p>
-        {/* <div className={`line ${lineClass}`}></div> */}
-
+        <div className={`${textClass}`}>
+          <p className="dotText">Passo {index + 1}</p>
+          <p className="dotDescription">{stepDescriptions[index]}</p>
+        </div>
         {index < steps.length - 1 && (
         <div className={`line ${index < currentStep ? "lineactive" : ""}`}></div>
       )}
@@ -49,11 +61,11 @@ const LayoutMain = () => {
     );
   })}
           </ul>
-        </aside>
+          </aside>
 
-        <main className="flex-1 w-[936px]">
-          <Outlet />
-        </main>
+          <main className="OutletContainer">
+            <Outlet />
+          </main>
         </div>
       </div>
     </div>
