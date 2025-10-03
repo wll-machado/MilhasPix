@@ -17,10 +17,10 @@ type FormValues = {
 };
 
 const programas = [
-  { id: "tudoazul", label: "Tudo Azul", img: Azul },
-  { id: "smiles", label: "Smiles", img: Smiles },
-  { id: "latam-pass", label: "Latam Pass", img: Latam },
-  { id: "airportugal", label: "Air Portugal", img: Air },
+  { id: "Azul", label: "Tudo Azul", img: Azul },
+  { id: "Smiles", label: "Smiles", img: Smiles },
+  { id: "Latam", label: "Latam Pass", img: Latam },
+  { id: "Air", label: "Air Portugal", img: Air },
 ];
 
 const FormStep1 = () => {
