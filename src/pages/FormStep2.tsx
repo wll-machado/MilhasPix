@@ -57,11 +57,11 @@ const FormStep2 = () => {
   const onSubmit = (values: FormValues) => {
     updateData(values);
     console.log("Step2 data:", values);
-    navigate("/cadastro/step3"); 
+    navigate("/step3"); 
   };
 
   const backToStep1 = () => {
-    navigate("/cadastro");
+    navigate("/");
   };
 
   return (

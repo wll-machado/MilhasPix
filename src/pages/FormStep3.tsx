@@ -31,7 +31,7 @@ const FormStep3 = () => {
 
   const navigate = useNavigate();
   const backToStep2 = () => {
-    navigate("/cadastro/step2");
+    navigate("/step2");
   };
   const iconsMap: Record<string, string> = {
     Azul: Azul,
@@ -45,7 +45,7 @@ const FormStep3 = () => {
   const onSubmit = (values: FormValues) => {
     updateData(values);
     console.log("Step3 data:", { ...data, ...values });
-    navigate("/cadastro/step4");
+    navigate("/step4");
   };
 
   {
@@ -117,18 +117,7 @@ const FormStep3 = () => {
               />
               <img className="dateImg" src={Locker} alt="cadeado icon" />
             </div>
-
-            <div className="dateCell">
-              <label className="dateLabel">CPF do Titular</label>
-              <input
-                type="text"
-                {...register("cpf", { required: true })}
-                className="dateInput"
-                placeholder="Digite seu cpf"
-              />
-            </div>
-
-            <div className="dateCell">
+                        <div className="dateCell">
               <label className="dateLabel">Telefone para autenticação</label>
               
               <div className="relative">

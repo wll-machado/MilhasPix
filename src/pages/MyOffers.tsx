@@ -10,7 +10,7 @@ const MyOffers = () => {
       <Header />
       <div>
          <h2>Minhas Ofertas</h2>
-      <button type="button" onClick={() => {navigate("/cadastro")}}>Criar nova oferta</button>
+      <button type="button" onClick={() => {navigate("/")}}>Criar nova oferta</button>
       </div>
       <div>
         <h2>todas as ofertas</h2>

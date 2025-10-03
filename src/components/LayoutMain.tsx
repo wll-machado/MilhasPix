@@ -3,7 +3,7 @@ import Header from "./Header";
 
 const LayoutMain = () => {
   const location = useLocation();
-  const steps = ["/cadastro", "/cadastro/step2", "/cadastro/step3", "/cadastro/step4"];
+  const steps = ["/", "/step2", "/step3", "/step4"];
   const stepDescriptions = [
   "Escolha a companhia aérea",
   "Oferte suas milhas",
