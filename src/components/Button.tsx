@@ -3,8 +3,8 @@ import left from "../assets/icons/Larrow.svg";
 
 interface ButtonProps {
     type: "button" | "submit";
-    text?: "Prosseguir" | "Voltar" | "Sair";
-    className: "buttonForm" | "buttonBackForm";
+    text?: "Prosseguir" | "Voltar" | "Sair" | "Ver minhas ofertas";
+    className: string;
     iconPosition: "left" | "right";
     navigate?: () => void
 }

@@ -28,7 +28,7 @@ const LayoutMain = () => {
         <div className="content">
           <aside className="dotContainer ">
           <ul className=" h-full">
-                <li className="md:hidden  text-[18px] font-[500] flex items-center justify-end">
+                <li className={`md:hidden  text-[18px] font-[500] flex items-center justify-end ${currentStep !== steps.length - 1 ? "flex" : "hidden"}`}>
                   <p> <span className="text-[#1E90FF] mr-0.5">{currentStep + 1} </span>  de  {steps.length}</p>
                 </li>
                 {steps.map((_, index) => {

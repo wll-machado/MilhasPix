@@ -10,6 +10,7 @@ import Locker from "../assets/icons/Locker.svg";
 import Zap from "../assets/icons/Zap.svg";
 import Flag from "../assets/icons/Flag.svg";
 import Button from "../components/Button";
+import { useState } from "react";
 
 type FormValues = {
   login: string;
@@ -29,6 +30,40 @@ const FormStep3 = () => {
     },
   });
 
+  const [cpf, setCpf] = useState("");
+  const handleCpfChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value;
+    
+    value = value.replace(/\D/g, "");
+    
+    value = value.slice(0, 11);
+    
+    value = value.replace(/(\d{3})(\d)/, "$1.$2");
+    value = value.replace(/(\d{3})(\d)/, "$1.$2");
+    value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+    setCpf(value);
+  };
+
+  const [phone, setPhone] = useState("");
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value;
+    
+    value = value.replace(/\D/g, "");
+   
+    value = value.slice(0, 11);
+    
+    if (value.length > 0) {
+      value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+    }
+    if (value.length > 6) {
+      value = value.replace(/(\d{5})(\d{4})$/, "$1-$2");
+    }
+
+    setPhone(value);
+  };
+
   const navigate = useNavigate();
   const backToStep2 = () => {
     navigate("/step2");
@@ -47,11 +82,7 @@ const FormStep3 = () => {
     console.log("Step3 data:", { ...data, ...values });
     navigate("/step4");
   };
-
-  {
-    console.log(data.programa);
-     console.log(iconsMap[data.programa ?? ""])
-  }
+  
   return (
     <div className="flex flex-col md:flex-row justify-between w-full">
       <form onSubmit={handleSubmit(onSubmit)} className="form">
@@ -92,6 +123,8 @@ const FormStep3 = () => {
                 {...register("cpf", { required: true })}
                 className="dateInput"
                 placeholder="Digite seu cpf"
+                value={cpf}
+                onChange={handleCpfChange}
               />
               <img className="dateImg" src={Cpf} alt="cpf icon" />
             </div>
@@ -119,13 +152,14 @@ const FormStep3 = () => {
             </div>
                         <div className="dateCell">
               <label className="dateLabel">Telefone para autenticação</label>
-              
               <div className="relative">
                 <span className="absolute flex items-center justify-center w-[66px] gap-1 rounded-[40px] bg-[#F3F3F3] translate-y-[20%] h-[32px] left-1.5">+55 <img src={Flag} alt="flag Brazil" /></span>
                 <input
                   type="text"
                   {...register("celular", { required: true })}
-                  className="dateInput  "
+                  className="dateInput"
+                  value={phone}
+                  onChange={handlePhoneChange}
                   placeholder="(99) 99999-9999"
                 />
                 <img src={Zap} className="absolute right-4 top-[30%]" alt="cadeado icon" />

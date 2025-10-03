@@ -30,6 +30,17 @@ const FormStep2 = () => {
 
   const [rankings, setRankings] = useState<Ranking[]>([]);
   const [showAlert, setShowAlert] = useState(false);
+  const [milesValue, setmilesValue] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    
+    let rawValue = e.target.value.replace(/\D/g, "");
+
+    
+    rawValue = rawValue.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    setmilesValue(rawValue);
+  };
 
   const fetchRanking = async (value: string) => {
     try {
@@ -91,21 +102,21 @@ const FormStep2 = () => {
 
             </li>
             <li>
-              <input type="radio" id="2dias" name="milhas" value="2dias" className="hidden peer"/>
+              <input type="radio" id="2dias" name="milhas" value="2dias" className="hidden peer" required/>
               <label htmlFor="2dias" className="milesRadio milesRadioMilhas ">
               em 2 dias
               </label>
             </li>         
 
             <li>
-              <input type="radio" id="7dias" name="milhas" value="7dias" className="hidden peer"/>
+              <input type="radio" id="7dias" name="milhas" value="7dias" className="hidden peer" required/>
               <label htmlFor="7dias" className=" milesRadio milesRadioMilhas ">
               em 7 dias
               </label>
             </li>  
 
             <li >
-              <input type="radio" id="emvoo" name="milhas" value="emvoo" className="hidden peer"/>
+              <input type="radio" id="emvoo" name="milhas" value="emvoo" className="hidden peer" required/>
               <label htmlFor="emvoo" className="milesRadio milesRadioMilhas ">
               Depois <br />do voo
               </label>
@@ -115,7 +126,8 @@ const FormStep2 = () => {
           <div className="flex flex-col  md:flex-row gap-3 mb-6 px-4">
             <div className="milesContainer relative">
               <h3 className="subtitle m-0">Milhas ofertadas</h3>
-              <input type="text" className="milesInput"/>
+              <input type="text" value={milesValue}
+        onChange={handleChange} className="milesInput" required/>
               <img src={Plane} alt="plane icon" className="w-4 h-4 absolute right-3.5 top-1/2 translate-y-[25%]" />
               
             </div>
@@ -257,7 +269,7 @@ const FormStep2 = () => {
         }`}>R$ {item.mile_value.toFixed(2)}</span>
 
                 {item.description === "essa será sua posição" ? (
-                  <span className="text-[#12A19A] ml-6 font-[500] bg-[#12A19A1A] px-2 h-[20px] rounded-[44px]">Você</span>
+                  <span className="text-[#12A19A]  font-[500] bg-[#12A19A1A] px-2 h-[20px] rounded-[44px]">Você</span>
                 ): ''}
               </li>
             ))}
