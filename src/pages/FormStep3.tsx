@@ -7,7 +7,7 @@ import Latam from "../assets/icons/Latam.svg";
 import Smiles from "../assets/icons/Smiles.svg";
 import Cpf from "../assets/icons/Cpf.svg";
 import Locker from "../assets/icons/Locker.svg";
-import What from "../assets/icons/What.svg";
+import Zap from "../assets/icons/What.svg";
 import Flag from "../assets/icons/Flag.svg";
 import Button from "../components/Button";
 
@@ -139,7 +139,7 @@ const FormStep3 = () => {
                   className="dateInput  "
                   placeholder="(99) 99999-9999"
                 />
-                <img src={What} className="absolute right-4 top-[30%]" alt="cadeado icon" />
+                <img src={Zap} className="absolute right-4 top-[30%]" alt="cadeado icon" />
               </div>
             </div>
           </div>
