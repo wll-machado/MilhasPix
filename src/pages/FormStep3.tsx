@@ -7,7 +7,7 @@ import Latam from "../assets/icons/Latam.svg";
 import Smiles from "../assets/icons/Smiles.svg";
 import Cpf from "../assets/icons/Cpf.svg";
 import Locker from "../assets/icons/Locker.svg";
-import Zap from "../assets/icons/What.svg";
+import Zap from "../assets/icons/Zap.svg";
 import Flag from "../assets/icons/Flag.svg";
 import Button from "../components/Button";
 
