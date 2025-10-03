@@ -6,17 +6,19 @@ interface ButtonProps {
     text?: "Prosseguir" | "Voltar" | "Sair";
     className: "buttonForm" | "buttonBackForm";
     iconPosition: "left" | "right";
+    navigate?: () => void
 }
-const Button = ({type, text, className,  iconPosition}: ButtonProps) => {
+const Button = ({navigate, type, text, className,  iconPosition}: ButtonProps) => {
   return (
     <button
+        onClick={navigate}
         type={type}
         className={className}
       >
         {/* Ícone à esquerda */}
         { iconPosition === "left" && <img src={left} alt="icon" className="w-4 h-4" />}
       
-        {text}
+        { iconPosition === "left" ? <p className="md:block hidden ">{text}</p>  : text}
       
         {/* Ícone à direita */}
         { iconPosition === "right" && <img src={right} alt="icon" className="w-4 h-4" />}

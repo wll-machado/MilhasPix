@@ -64,7 +64,7 @@ body {
         color: rgba(203, 213, 225, 1);
       }
       .dotContainer {
-        @apply w-[20.39%] md:h-[345px]  h-[28px] absolute md:relative md:left-0 md:bottom-0 bottom-5.5 left-[35%];
+        @apply w-[20.39%] md:h-[345px]  h-[28px] fixed md:relative md:left-0 md:bottom-0 bottom-5.5 left-[35%] z-10;
       }
       .dot{
         width: 32px;
@@ -191,13 +191,60 @@ body {
       ;
     }
 
+    & .subtitle{
+      @apply mt-4 ml-4 mb-2;
+      font-family: DM Sans;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 16px;
+      line-height: 130%;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
+
+    & .milesContainer{
+      @apply flex flex-col md:w-1/2 w-full ;
+    }
+    & .milesInput{
+     @apply h-[44px] text-[#2E3D50] border border-[#E2E2E2] rounded-[44px] p-2 w-full;
+      
+    }
+    
+
+    & .milesSpan {
+      @apply flex  justify-center items-center md:h-[44px]  border-[#E2E2E2] rounded-[44px] w-full md:bg-[#12A19A1A];
+      font-family: DM Sans;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 14px;
+      
+      letter-spacing: 0%;
+      text-align: center;
+      vertical-align: middle;
+      
+      color: #12A19A;
+    }
+
+    & .toggleText {
+        font-family: DM Sans;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 16px;       
+        letter-spacing: 0%;
+        vertical-align: middle;
+        color: #2E3D50;
+
+    }
+
+
     & .radioContainer{
-      @apply flex w-full gap-3 relative justify-between h-[72px] p-4 ;
+      @apply flex w-full gap-3 relative justify-between h-[72px] p-4  ;
 
       & li{
         @apply md:w-[22.34%] flex justify-center md:relative absolute w-[90%] h-[44px] ;
         background-color: var(--background);
         border-radius: 56px;
+        
         
 
         & .radio {
@@ -218,17 +265,71 @@ body {
            }
            }
         }
+
+        & .radioMilhas {
+          @apply px-0 ;
+          text-align: center;
+          font-family: DM Sans;
+          font-weight: 500;
+          font-style: Medium;
+          font-size: 16px;
+          color: #000000;
+          line-height: 18px;
+          letter-spacing: 0%;
+
+        }
       }
     }
 
+    & .milesRadioContainer{
+      @apply flex w-full gap-3 relative justify-between  md:h-[72px] flex-wrap p-4  ;
+
+      & li{
+        @apply md:w-[22.34%]  flex justify-center md:relative  w-[134px] h-[44px] ;
+        background-color: var(--background);
+        border-radius: 56px;
+        
+        
+
+        & .milesRadio {
+          @apply font-[500] bg-white  text-[#000000] flex justify-center md:gap-0 gap-2.75  md:px-4 items-center  w-full   border border-gray-200 rounded-lg cursor-pointer  peer-checked:border-blue-600 peer-checked:border-2  peer-checked:text-blue-600 hover:text-blue-600 ;
+
+           border-radius: 56px;
+           
+           & div {
+            @apply flex  md:justify-center w-full justify-between;
+            & span{
+            font-size: 14px;
+            color: var(--text-color); 
+           }
+
+           }
+        }
+
+        & .radioMilhas {
+          @apply px-0 ;
+          text-align: center;
+          font-family: DM Sans;
+          font-weight: 500;
+          font-style: Medium;
+          font-size: 16px;
+          color: #000000;
+          line-height: 18px;
+          letter-spacing: 0%;
+
+        }
+      }
+    }
+    
+
     & .buttonContainer{
-      @apply md:p-0 md:relative absolute p-4;
+      @apply md:p-0 md:relative fixed md:border-0 border-t-1 left-0 bottom-0  p-4 ;
       
+      border-color: #E6E6E6;
+      background-color: #ffffff;
       display: flex;
-      flex-direction: column;
+      justify-content: flex-end;
       
-      left: 0;
-      bottom: 0;
       
      & .buttonForm{
       
@@ -256,7 +357,8 @@ body {
     }
 
     & .buttonBackForm{
-      width: 112px;
+      @apply md:px-6 px-2.5 py-2.5;
+      width: auto;
       height: 40px;
       background-color: var(--background);
       color: var(--text-color);
@@ -268,7 +370,7 @@ body {
       letter-spacing: 0%;
       text-align: center;
       vertical-align: middle;
-      padding: 10px 24px;
+      
       border-radius: 44px;
       border: 1px solid var(--gray-color);
 
@@ -308,10 +410,38 @@ body {
     color: var(--text-color);
     line-height: line-height/leading-7;
     letter-spacing: 0%;    
+
+    & .alert{
+      @apply bg-[#DC2B2B1A] text-[14px] rounded-[40px] text-[#DC2B2B] px-4 gap-1 items-center justify-center;
+    }
+    
   }
 
  }
 
+ .notificationRanking{
+  @apply p-3 border border-[#E2E2E2] rounded h-[110px] ;
+
+  
+   & p{
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: var(--text-secondary);
+   }
+ }
+
+ .notificationTitle{
+    @apply md:text-[#2E3D50];
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    
+   }
  .notification {
  @apply p-3 border border-[#E2E2E2] rounded h-[110px] w-full md:w-[26.72%];
 

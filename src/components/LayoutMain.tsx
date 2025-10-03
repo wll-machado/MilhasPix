@@ -28,8 +28,8 @@ const LayoutMain = () => {
         <div className="content">
           <aside className="dotContainer ">
           <ul className=" h-full">
-                <li className="md:hidden text-[18px] font-[500] flex items-center justify-end">
-                  <p> <span className="text-[#1E90FF] mr-0.5">{currentStep + 1} </span>  de {steps.length}</p>
+                <li className="md:hidden  text-[18px] font-[500] flex items-center justify-end">
+                  <p> <span className="text-[#1E90FF] mr-0.5">{currentStep + 1} </span>  de  {steps.length}</p>
                 </li>
                 {steps.map((_, index) => {
                 let dotClass = "";

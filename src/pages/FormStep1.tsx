@@ -42,7 +42,7 @@ const FormStep1 = () => {
     navigate("/cadastro/step2");
   };
 
-  // Atualiza tanto o estado quanto o RHF
+  
   const handleProgramaChange = (value: string) => {
     setSelectedPrograma(value);
     setValue("programa", value, { shouldValidate: true });
@@ -122,7 +122,7 @@ const FormStep1 = () => {
         </div>
       </form>
 
-      {/* Select que controla os radios no MOBILE */}
+      
       <div className="md:hidden relative w-full mb-3">
         <select
           name="programaMobile"
