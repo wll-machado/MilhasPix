@@ -38,7 +38,6 @@ const FormStep1 = () => {
 
   const onSubmit = (values: FormValues) => {
     updateData(values);
-    console.log("Step1 data:", values);
     navigate("/step2");
   };
 

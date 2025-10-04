@@ -35,7 +35,6 @@ const FormStep2 = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     
     let rawValue = e.target.value.replace(/\D/g, "");
-
     
     rawValue = rawValue.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -67,7 +66,6 @@ const FormStep2 = () => {
 
   const onSubmit = (values: FormValues) => {
     updateData(values);
-    console.log("Step2 data:", values);
     navigate("/step3"); 
   };
 

@@ -79,7 +79,6 @@ const FormStep3 = () => {
 
   const onSubmit = (values: FormValues) => {
     updateData(values);
-    console.log("Step3 data:", { ...data, ...values });
     navigate("/step4");
   };
   
