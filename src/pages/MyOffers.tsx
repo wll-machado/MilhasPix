@@ -6,10 +6,6 @@ import Header from "../components/Header";
 import Smiles from "../assets/icons/Smilesimg.svg";
 import Azul from "../assets/icons/Azulimg.svg";
 
-const apiBaseUrl =
-  import.meta.env.MODE === "development"
-    ? "/api"
-    : "https://api.milhaspix.com";
 
 interface Offer {
   offerId: string;
@@ -35,14 +31,14 @@ const MyOffers = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
 
-  useEffect(() => {
+ useEffect(() => {
   const fetchOffers = async () => {
     try {
-      const response = await axios.get(`${apiBaseUrl}/simulate-offers-list`);
+      const response = await axios.get(`/api/simulate-offers-list`);
       setData(response.data);
     } catch (err) {
       setError("Erro ao carregar ofertas.");
-      console.error("Erro ao buscar ofertas:", err);
+      console.error(err);
     } finally {
       setLoading(false);
     }

@@ -7,10 +7,6 @@ import { useOffers } from "../context/OffersContext";
 import Button from "../components/Button";
 import Plane from "../assets/icons/Plane.svg";
 
-const apiBaseUrl =
-  import.meta.env.MODE === "development"
-    ? "/api"
-    : "https://api.milhaspix.com";
 
 interface Ranking {
   mile_value: number;
@@ -49,9 +45,7 @@ const FormStep2 = () => {
   const fetchRanking = async (value: string) => {
   try {
     const formattedValue = value.replace(",", ".");
-    const response = await axios.get(
-      `${apiBaseUrl}/simulate-ranking?mile_value=${formattedValue}`
-    );
+    const response = await axios.get(`/api/simulate-ranking?mile_value=${formattedValue}`);
     setRankings(response.data);
   } catch (error) {
     console.error("Erro ao buscar ranking:", error);
