@@ -198,10 +198,15 @@ useEffect(() => {
 
 
           <div className="flex flex-col gap-3 px-4 pb-4">
+            
             <label className="flex md:gap-3 gap-2 items-center cursor-pointer">
-              <input type="checkbox" value="" onClick ={() => setToggle(!toggle)} className="sr-only peer"/>
-              <div className="relative w-11 h-6  peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300  rounded-full peer dark:bg-[#E2E2E2] peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600  dark:peer-checked:bg-blue-600"></div>
-              <span className="toggleText">Definir média de milhas por passageiro</span>
+            <input 
+            type="checkbox" 
+            className="toggle-input sr-only" 
+            onClick={() => setToggle(!toggle)} 
+            />
+            <div className="toggle-switch"></div>
+            <span className="toggleText">Definir média de milhas por passageiro</span>
             </label>
 
             <div className={toggle ? "flex gap-3 md:flex-row flex-col" : "hidden"}>

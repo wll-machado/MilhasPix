@@ -627,3 +627,43 @@ body {
   }
   
  }
+
+ /* Estiliza a "bolinha" e a base do toggle */
+.toggle-switch {
+  position: relative;
+  width: 44px;            /* w-11 */
+  height: 24px;           /* h-6 */
+  border-radius: 9999px;  /* rounded-full */
+  background-color: #e2e2e2; /* dark:bg-[#E2E2E2] */
+  transition: background-color 0.2s ease;
+}
+
+/* Foco do input (substituindo peer-focus) */
+.toggle-input:focus + .toggle-switch {
+  outline: none;
+  box-shadow: 0 0 0 2px #93c5fd; /* peer-focus:ring-2 peer-focus:ring-blue-300 */
+}
+
+/* Bolinha interna */
+.toggle-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+/* Quando o input está checked (substitui peer-checked) */
+.toggle-input:checked + .toggle-switch {
+  background-color: #2563eb; /* dark:peer-checked:bg-blue-600 */
+}
+
+.toggle-input:checked + .toggle-switch::after {
+  transform: translateX(20px); /* peer-checked:after:translate-x-full */
+  border-color: #ffffff;      /* peer-checked:after:border-white */
+}
