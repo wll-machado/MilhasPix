@@ -69,21 +69,21 @@ const MyOffers = () => {
   });
 
   const statusClasses: Record<string, string> = {
-  Ativa: "bg-green-400",
+  Ativa: "bg-[#10B981]",
   "Em Utilizacao": "bg-[#1E90FF]",
-  Inativo: "bg-gray-400",
+  Inativo: "bg-[#acacac]",
   };
 
   const textClasses: Record<string, string> = {
   Ativa: "text-[#065F46]",
   "Em Utilizacao": "text-[#002040]",
-  Inativo: "text-gray-400",
+  Inativo: "text-[#acacac]",
   };
 
   const bgClasses: Record<string, string> = {
   Ativa: "bg-[#D1FAE5]",
   "Em Utilizacao": "bg-[#C1D8EE]",
-  Inativo: "bg-gray-200",
+  Inativo: "bg-[#d9d9d955]",
   };
 
   return (
